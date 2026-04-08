@@ -13,6 +13,8 @@ A modern, responsive calendar application with intuitive date selection, notes m
 - 📅 **Interactive Calendar** - Navigate months with smooth, intuitive controls
 - 📝 **Notes Management** - Create and organize notes for specific dates
 - 🌓 **Theme Toggle** - Light/Dark mode with localStorage persistence
+- ⏳ **Loading Skeletons** - Elegant skeleton loaders for better UX during data fetching
+- 🔔 **Toast Notifications** - Real-time feedback with toast alerts for user actions
 - 📱 **Responsive Design** - Mobile, tablet, and desktop optimized
 - ✨ **Smooth Animations** - Framer Motion for polished transitions
 - 🎨 **Modern UI** - Clean, minimalist design with custom styling
@@ -30,6 +32,7 @@ A modern, responsive calendar application with intuitive date selection, notes m
 | date-fns | 4.1.0 | Date utilities & calculations |
 | Zustand | 5.0.12 | State management |
 | Lucide React | 1.7.0 | Icon library |
+| React Context API | Built-in | Global state for calendar, theme & notifications |
 
 ---
 
@@ -85,11 +88,13 @@ calendar/
 │   ├── Calendar.jsx       # Main calendar wrapper
 │   ├── CalendarGrid.jsx   # Calendar month grid
 │   ├── CalendarHero.jsx   # Hero section
+│   ├── CalendarSkeleton.jsx # Loading skeleton component
 │   ├── NotesPanel.jsx     # Notes management
 │   └── ThemeToggle.jsx    # Theme switcher
 ├── context/               # React Context
 │   ├── CalendarContext.jsx # Date & calendar state
-│   └── ThemeContext.jsx    # Theme state
+│   ├── ThemeContext.jsx    # Theme state
+│   └── ToastContext.jsx    # Toast notifications state
 ├── lib/
 │   └── utils.js           # Utility functions
 └── public/                # Static assets
@@ -102,6 +107,7 @@ calendar/
 ### State Management
 - **Calendar Context** - Manages date selection and month navigation
 - **Theme Context** - Handles dark/light mode with localStorage persistence
+- **Toast Context** - Manages notification system for user feedback
 - **Zustand** - Additional state management for complex operations
 
 ### Responsive Architecture
@@ -112,8 +118,16 @@ calendar/
 ### Performance Optimizations
 - React.memo for component memoization
 - Efficient re-render patterns with useEffect hooks
+- Skeleton loaders for perceived performance
 - CSS variables for dynamic theming
 - Responsive image handling
+- Optimized context subscriptions
+
+### User Experience
+- Toast notifications provide instant feedback on actions
+- Skeleton screens minimize perceived load time
+- Smooth transitions and animations enhance navigation
+- Persistent theme preferences across sessions
 
 ---
 
@@ -134,12 +148,6 @@ Contributions are welcome! Feel free to:
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 

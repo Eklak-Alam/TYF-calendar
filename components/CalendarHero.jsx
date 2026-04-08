@@ -1,10 +1,10 @@
-// src/components/CalendarHero.jsx
 "use client";
 
 import React from "react";
 import { getDay, format } from "date-fns";
-import { useCalendarContext } from "../context/CalendarContext"; // Import context
+import { useCalendarContext } from "../context/CalendarContext";
 
+// Array of images matching days of the week (Index 0 = Sunday)
 const DAILY_IMAGES = [
   "https://images.pexels.com/photos/34173189/pexels-photo-34173189.jpeg", // Sunday
   "https://images.pexels.com/photos/34242167/pexels-photo-34242167.jpeg", // Monday

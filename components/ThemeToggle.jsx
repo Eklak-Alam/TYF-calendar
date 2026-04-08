@@ -1,4 +1,3 @@
-// src/components/ThemeToggle.jsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -6,10 +5,14 @@ import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState("light");
+  
+  // To avoid hydration mismatch errors, we ensure the UI matches the 
+  // server render initially by tracking `isMounted`
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    // Check localStorage on load
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme === "dark") {
       setTheme("dark");
@@ -35,14 +38,10 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      // UI/UX Upgrades: explicitly added cursor-pointer, active:scale-95 for tactile clicking, 
-      // hover:scale-105 for depth, and focus rings for accessibility.
       className="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full bg-[var(--primary)] text-[var(--background)] shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 focus:ring-offset-[var(--background)] overflow-hidden"
       aria-label="Toggle Theme"
     >
-      {/* Sun Icon: Visible in light mode. 
-        When switching to dark, it rotates -90 degrees, shrinks, and fades out.
-      */}
+      {/* Sun Icon: Visible in light mode. */}
       <Sun 
         size={20} 
         strokeWidth={2.5} 
@@ -53,9 +52,7 @@ export default function ThemeToggle() {
         }`} 
       />
       
-      {/* Moon Icon: Visible in dark mode. 
-        When switching to light, it rotates 90 degrees, shrinks, and fades out.
-      */}
+      {/* Moon Icon: Visible in dark mode. */}
       <Moon 
         size={20} 
         strokeWidth={2.5} 
