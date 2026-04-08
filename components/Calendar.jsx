@@ -21,7 +21,7 @@ export default function Calendar() {
         
         <header className="shrink-0 max-w-6xl mx-auto w-full px-4 md:px-8 py-5 md:py-6 flex justify-between items-center z-20 relative">
           <h1 className="text-xl md:text-2xl font-bold tracking-tight">
-            CalendarTYF
+            Calendar
           </h1>
           <ThemeToggle />
         </header>

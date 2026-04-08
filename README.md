@@ -1,4 +1,4 @@
-# 🗓️ CalendarTYF — Interactive Calendar Planner
+# 🗓️ Calendar — Interactive Calendar Planner
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.2-000000?style=flat-square&logo=nextdotjs)
 ![React](https://img.shields.io/badge/React-19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -151,4 +151,4 @@ Contributions are welcome! Feel free to:
 
 ---
 
-**Built with ❤️ by CalendarTYF Team**
+**Built with ❤️ by Calendar Team**
