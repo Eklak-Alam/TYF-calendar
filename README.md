@@ -1,60 +1,146 @@
-# 🗓️ CalendarTYF — Premium Interactive Planner
+# 🗓️ CalendarTYF — Interactive Calendar Planner
 
-![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-16.2-000000?style=flat-square&logo=nextdotjs)
+![React](https://img.shields.io/badge/React-19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38B2AC?style=flat-square&logo=tailwind-css)
 
-**CalendarTYF** is an ultra-refined, high-performance interactive planner built to bridge the gap between aesthetic design and functional complexity. Created with a **"Coffee & Cream"** design philosophy, it offers a distraction-free environment for range-based scheduling and contextual note-taking.
-
----
-
-## 🌟 Why CalendarTYF? (Internship Showcase)
-
-I built this project to demonstrate a mastery of **State Management**, **Component Architecture**, and **Responsive Design**. It isn't just a calendar; it’s a study on how users interact with dates and data transitions.
-
-### 🚀 Key Features I Implemented:
-
-* **⚡ Dual-State Selection Logic:** I engineered a custom range-selection algorithm that allows users to pick a start and end date seamlessly. The UI dynamically calculates and highlights the "In-Between" dates using CSS Variable-based color interpolation.
-* **🎭 Stacked Hero Crossfades:** To solve the "flash-of-unstyled-image" problem, I implemented a stack-based image transition system. When a date is selected, the hero banner fades between 7 high-definition daily inspirations using a 1000ms GPU-accelerated transition.
-* **🎨 Custom Theming Engine:** Beyond standard dark mode, I created a bespoke "Coffee & Cream" system. 
-    * **Light:** Pure White + Espresso Brown UI elements.
-    * **Dark:** Deep Roast Brown + Off-White Cream elements.
-* **📓 Dynamic Contextual Memos:** Notes are tied to the `Context API` state. I built a scalable notes panel that handles internal scrolling while keeping the parent layout locked to the viewport (`h-screen`).
-* **📑 Custom UI Selectors:** I replaced native browser dropdowns with custom-built Month/Year selectors to ensure a consistent, professional UI across all browsers (Chrome, Safari, Firefox).
+A modern, responsive calendar application with intuitive date selection, notes management, and dark/light theme support. Built with Next.js and Tailwind CSS for optimal performance.
 
 ---
 
-## 🛠️ The Tech Stack
+## ✨ Features
 
-| Tool | Purpose |
-| :--- | :--- |
-| **Next.js 14** | Utilizing App Router for high-performance navigation and SEO optimization. |
-| **Tailwind CSS** | Implementing a customized design system with responsive "Mobile-First" breakpoints. |
-| **Date-fns** | Handling complex date arithmetic (Range checks, interval calculations). |
-| **React Context API** | Managing global state for dates, notes, and theme transitions. |
-| **Lucide React** | Using minimalist vector icons for a professional, clean aesthetic. |
-
----
-
-## 📱 Full Responsiveness
-
-I ensured that the application feels like a native app on every device:
-- **Desktop (lg):** Side-by-side interactive panels with a fixed-height (`h-screen`) "locked" layout.
-- **Tablet/Mobile:** A fluid, vertically-stacked architecture with kinetic internal scrolling for the notes section.
+- 📅 **Interactive Calendar** - Navigate months with smooth, intuitive controls
+- 📝 **Notes Management** - Create and organize notes for specific dates
+- 🌓 **Theme Toggle** - Light/Dark mode with localStorage persistence
+- 📱 **Responsive Design** - Mobile, tablet, and desktop optimized
+- ✨ **Smooth Animations** - Framer Motion for polished transitions
+- 🎨 **Modern UI** - Clean, minimalist design with custom styling
 
 ---
 
-## 🏗️ How I Built It (My Process)
+## 🛠️ Tech Stack
 
-1.  **State Architecture:** I prioritized a single source of truth using `CalendarContext` to prevent "prop drilling" between the grid, hero, and notes panels.
-2.  **UI/UX Polishing:** I added tactile feedback like `active:scale-95` on buttons and `backdrop-blur` on the hero banner to create a "Premium" feel.
-3.  **Optimization:** Used `React.memo` and `useEffect` hooks to ensure that re-renders only occur when the date or theme actually changes, maintaining 60FPS performance.
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Next.js | 16.2.2 | Server-side rendering & App Router |
+| React | 19.2.4 | Component-based UI |
+| Tailwind CSS | 4 | Responsive utility-first styling |
+| Framer Motion | 12.38.0 | Animations & transitions |
+| date-fns | 4.1.0 | Date utilities & calculations |
+| Zustand | 5.0.12 | State management |
+| Lucide React | 1.7.0 | Icon library |
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Getting Started
 
-1. **Clone & Enter:**
+### Prerequisites
+- Node.js 18 or higher
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/CalendarTYF.git](https://github.com/yourusername/CalendarTYF.git) && cd CalendarTYF
+   git clone https://github.com/yourusername/calendar.git
+   cd calendar
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   - Navigate to [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📖 Available Scripts
+
+```bash
+npm run dev      # Start dev server with hot reload
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
+
+---
+
+## 📂 Project Structure
+
+```
+calendar/
+├── app/                    # Next.js app directory
+│   ├── globals.css        # Global styles
+│   ├── layout.js          # Root layout component
+│   └── page.js            # Home page
+├── components/            # React components
+│   ├── Calendar.jsx       # Main calendar wrapper
+│   ├── CalendarGrid.jsx   # Calendar month grid
+│   ├── CalendarHero.jsx   # Hero section
+│   ├── NotesPanel.jsx     # Notes management
+│   └── ThemeToggle.jsx    # Theme switcher
+├── context/               # React Context
+│   ├── CalendarContext.jsx # Date & calendar state
+│   └── ThemeContext.jsx    # Theme state
+├── lib/
+│   └── utils.js           # Utility functions
+└── public/                # Static assets
+```
+
+---
+
+## 🎯 Key Implementation Details
+
+### State Management
+- **Calendar Context** - Manages date selection and month navigation
+- **Theme Context** - Handles dark/light mode with localStorage persistence
+- **Zustand** - Additional state management for complex operations
+
+### Responsive Architecture
+- **Mobile** - Vertical stack layout with scrollable notes panel
+- **Desktop** - Side-by-side layout with fixed viewport height
+- **Animations** - GPU-accelerated transitions using Framer Motion
+
+### Performance Optimizations
+- React.memo for component memoization
+- Efficient re-render patterns with useEffect hooks
+- CSS variables for dynamic theming
+- Responsive image handling
+
+---
+
+## 🌐 Browser Support
+
+Works on all modern browsers:
+- Chrome/Edge (v90+)
+- Firefox (v88+)
+- Safari (v14+)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+**Built with ❤️ by CalendarTYF Team**
